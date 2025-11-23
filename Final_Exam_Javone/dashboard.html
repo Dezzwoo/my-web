@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard - CampusEvents</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Events</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li><a class="nav-link" href="products.html">Events</a></li>
+        <li><a class="nav-link" href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-5">
+  <h2>Dashboard</h2>
+  <p id="welcomeMessage" class="lead"></p>
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5>My Registered Events</h5>
+          <a href="products.html" class="btn btn-primary">View</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5>Edit Profile</h5>
+          <button class="btn btn-secondary" disabled>Coming Soon</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5>Notifications</h5>
+          <button class="btn btn-info text-white" disabled>Coming Soon</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+const user = localStorage.getItem("userName");
+document.getElementById("welcomeMessage").innerText =
+  user ? `Welcome, ${user}!` : "Please login.";
+</script>
+
+</body>
+</html>
